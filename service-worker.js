@@ -9,7 +9,11 @@ var STATIC_ASSETS = [
   "./styles.css",
   "./app.js",
   "./manifest.json",
-  "./words.json"
+  "./words.json",
+  // 小游戏英文指令语音（words.json 之外硬编码引用的 3 条）
+  "./audio/en_load_truck.mp3",
+  "./audio/en_listen.mp3",
+  "./audio/en_feed_trex.mp3"
 ];
 
 self.addEventListener("install", function (event) {

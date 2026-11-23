@@ -170,7 +170,39 @@ body {
   pointer-events: none;
 }
 
-/* 正确：放大跳动；错误：左右摇晃 */
+/* 英文题目 + 中文翻译（给家长看，孩子听语音） */
+.quiz-en {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.quiz-cn {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 4px 0 8px;
+}
+
+/* 选项中文小字（家长参考） */
+.opt-cn {
+  font-size: 15px;
+  font-weight: 700;
+  color: #546E7A;
+  margin-top: 4px;
+  pointer-events: none;
+}
+
+.opt-pic { pointer-events: none; }
+
+.quiz-opt { flex-direction: column; }
+
+.rest-cn {
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 12px;
+}
 @keyframes bounceGood {
   0% { transform: scale(1); }
   40% { transform: scale(1.15); }

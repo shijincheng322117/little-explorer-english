@@ -173,14 +173,26 @@
       return;
     }
     var target = q.pool[q.idx % q.pool.length];
-    // 干扰项：同主题随机 2 个不同词
-    var others = shuffle(q.pool.filter(function (it) { return it.id !== target.id; })).slice(0, 2);
+    // 干扰项：优先同站点取；站点词不足时从全主题补足，保证永远 3 个选项
+    var others = shuffle(q.pool.filter(function (it) { return it.id !== target.id; }));
+    if (others.length < 2) {
+      var extra = shuffle(q.th.items.filter(function (it) {
+        return it.id !== target.id && others.indexOf(it) === -1;
+      }));
+      others = others.concat(extra);
+    }
+    others = others.slice(0, 2);
     var opts = shuffle([target].concat(others));
     var html = '<div class="quiz-title">👂 听一听，点一点</div>' +
+      // 英文题目 + 中文翻译（家长看，孩子听语音）
+      '<div class="quiz-en">' + target.questionText + "</div>" +
+      '<div class="quiz-cn">找一找：' + target.cn + "</div>" +
       '<div class="quiz-progress">⭐ ' + (q.idx + 1) + " / " + q.total + "</div>" +
       '<div class="quiz-grid">';
     opts.forEach(function (it) {
-      html += '<button class="quiz-opt" data-id="' + it.id + '">' + imgTag(it) + "</button>";
+      html += '<button class="quiz-opt" data-id="' + it.id + '">' +
+        '<span class="opt-pic">' + imgTag(it) + "</span>" +
+        '<span class="opt-cn">' + it.cn + "</span></button>";
     });
     html += "</div>";
     stage.innerHTML = html;
@@ -245,13 +257,16 @@
     var target = rightPool[Math.floor(Math.random() * rightPool.length)] || th.items[0];
     var opts = shuffle([target].concat(pick(wrongPool, 2)));
     var html = '<div class="quiz-title">🚛 Load the dump truck!</div>' +
+      '<div class="quiz-cn">把土装进翻斗车！</div>' +
       '<div class="game-big">🚛<span id="soilBox"></span></div>' +
       '<div class="game-row">';
     opts.forEach(function (it) {
-      html += '<button class="game-opt" data-id="' + it.id + '">' + imgTag(it) + "</button>";
+      html += '<button class="game-opt" data-id="' + it.id + '">' +
+        '<span class="opt-pic">' + imgTag(it) + "</span>" +
+        '<span class="opt-cn">' + it.cn + "</span></button>";
     });
     stage.innerHTML = html + "</div>";
-    setTimeout(function () { playAudio("audio/word_dump_truck.mp3"); }, 300);
+    setTimeout(function () { playAudio("audio/en_load_truck.mp3"); }, 300);
     stage.querySelectorAll(".game-opt").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var id = btn.getAttribute("data-id");
@@ -279,12 +294,17 @@
     var target = pool[Math.floor(Math.random() * pool.length)];
     var others = shuffle(pool.filter(function (it) { return it.id !== target.id; })).slice(0, 2);
     var opts = shuffle([target].concat(others));
-    var html = '<div class="quiz-title">🔊 哪个在叫？点一点</div><div class="game-row">';
+    var html = '<div class="quiz-title">🔊 听听是谁在叫？点一点</div>' +
+      '<div class="quiz-en">Listen! Which one is making the sound?</div>' +
+      '<div class="game-row">';
     opts.forEach(function (it) {
-      html += '<button class="game-opt" data-id="' + it.id + '">' + imgTag(it) + "</button>";
+      html += '<button class="game-opt" data-id="' + it.id + '">' +
+        '<span class="opt-pic">' + imgTag(it) + "</span>" +
+        '<span class="opt-cn">' + it.cn + "</span></button>";
     });
     stage.innerHTML = html + "</div>";
-    // 优先播 sfx，不存在则回退到单词发音
+    // 先播指令，隔 2 秒再播声音，避免混音
+    setTimeout(function () { playAudio("audio/en_listen.mp3"); }, 300);
     setTimeout(function () {
       var sfxMap = {
         car: "audio/sfx_car_beep.mp3", bus: "audio/sfx_bus_horn.mp3",
@@ -294,7 +314,7 @@
         boat: "audio/sfx_boat_horn.mp3"
       };
       playAudio(sfxMap[target.id] || target.wordAudio);
-    }, 300);
+    }, 2600);
     stage.querySelectorAll(".game-opt").forEach(function (btn) {
       btn.addEventListener("click", function () {
         if (btn.getAttribute("data-id") === target.id) {
@@ -315,18 +335,22 @@
   function startFeedGame(th) {
     var stage = $("stage");
     var foods = [
-      { id: "apple_red", icon: "🍎", ok: true },
-      { id: "apple_blue", icon: "🫐", ok: false },
-      { id: "banana", icon: "🍌", ok: false }
+      { id: "apple_red", icon: "🍎", cn: "红苹果", ok: true },
+      { id: "apple_blue", icon: "🫐", cn: "蓝莓", ok: false },
+      { id: "banana", icon: "🍌", cn: "香蕉", ok: false }
     ];
     var html = '<div class="quiz-title">🦖 Feed the T-Rex!</div>' +
+      '<div class="quiz-en">Feed the T-Rex the red apple!</div>' +
+      '<div class="quiz-cn">喂霸王龙吃红苹果！</div>' +
       '<div class="game-big" id="dinoMouth">🦖</div>' +
       '<div class="game-row">';
     shuffle(foods).forEach(function (f) {
-      html += '<button class="game-opt" data-ok="' + (f.ok ? "1" : "0") + '">' + f.icon + "</button>";
+      html += '<button class="game-opt" data-ok="' + (f.ok ? "1" : "0") + '">' +
+        '<span class="opt-pic">' + f.icon + "</span>" +
+        '<span class="opt-cn">' + f.cn + "</span></button>";
     });
     stage.innerHTML = html + "</div>";
-    setTimeout(function () { playAudio("audio/q_t_rex.mp3"); }, 300);
+    setTimeout(function () { playAudio("audio/en_feed_trex.mp3"); }, 300);
     stage.querySelectorAll(".game-opt").forEach(function (btn) {
       btn.addEventListener("click", function () {
         if (btn.getAttribute("data-ok") === "1") {
