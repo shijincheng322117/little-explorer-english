@@ -1,0 +1,506 @@
+{
+  "themes": [
+    {
+      "id": "construction",
+      "name": "Construction",
+      "icon": "🚜",
+      "stations": [
+        {
+          "id": "dig",
+          "name": "Dig",
+          "icon": "⛏️"
+        },
+        {
+          "id": "haul",
+          "name": "Haul",
+          "icon": "🚛"
+        },
+        {
+          "id": "roll",
+          "name": "Roll",
+          "icon": "🛞"
+        },
+        {
+          "id": "mix",
+          "name": "Mix",
+          "icon": "🌀"
+        },
+        {
+          "id": "lift",
+          "name": "Lift",
+          "icon": "🏗️"
+        }
+      ],
+      "items": [
+        {
+          "id": "excavator",
+          "word": "excavator",
+          "cn": "挖掘机",
+          "parentNote": "也叫 digger，可先让孩子听 excavator",
+          "image": "assets/images/excavator.jpg",
+          "questionText": "Where is the excavator?",
+          "questionAudio": "audio/q_excavator.mp3",
+          "wordAudio": "audio/word_excavator.mp3",
+          "station": "dig",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "dump_truck",
+          "word": "dump truck",
+          "cn": "翻斗车",
+          "parentNote": "装土、倒土的车",
+          "image": "assets/images/dump_truck.jpg",
+          "questionText": "Find the dump truck.",
+          "questionAudio": "audio/q_dump_truck.mp3",
+          "wordAudio": "audio/word_dump_truck.mp3",
+          "station": "haul",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "road_roller",
+          "word": "road roller",
+          "cn": "压路机",
+          "parentNote": "压平路面的车，也可说 steamroller",
+          "image": "assets/images/road_roller.jpg",
+          "questionText": "Where is the road roller?",
+          "questionAudio": "audio/q_road_roller.mp3",
+          "wordAudio": "audio/word_road_roller.mp3",
+          "station": "roll",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "cement_mixer",
+          "word": "cement mixer",
+          "cn": "水泥搅拌车",
+          "parentNote": "也可说 mixer truck",
+          "image": "assets/images/cement_mixer.jpg",
+          "questionText": "Find the cement mixer.",
+          "questionAudio": "audio/q_cement_mixer.mp3",
+          "wordAudio": "audio/word_cement_mixer.mp3",
+          "station": "mix",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "crane",
+          "word": "crane",
+          "cn": "吊机/起重机",
+          "parentNote": "吊装重物的工程车",
+          "image": "assets/images/crane.jpg",
+          "questionText": "Where is the crane?",
+          "questionAudio": "audio/q_crane.mp3",
+          "wordAudio": "audio/word_crane.mp3",
+          "station": "lift",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "bulldozer",
+          "word": "bulldozer",
+          "cn": "推土机",
+          "parentNote": "前面有大铲子推土",
+          "image": "assets/images/bulldozer.jpg",
+          "questionText": "Find the bulldozer.",
+          "questionAudio": "audio/q_bulldozer.mp3",
+          "wordAudio": "audio/word_bulldozer.mp3",
+          "station": "dig",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "loader",
+          "word": "loader",
+          "cn": "装载机",
+          "parentNote": "用大铲斗装土装石",
+          "image": "assets/images/loader.jpg",
+          "questionText": "Where is the loader?",
+          "questionAudio": "audio/q_loader.mp3",
+          "wordAudio": "audio/word_loader.mp3",
+          "station": "haul",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "forklift",
+          "word": "forklift",
+          "cn": "叉车",
+          "parentNote": "仓库和工地搬货用",
+          "image": "assets/images/forklift.jpg",
+          "questionText": "Find the forklift.",
+          "questionAudio": "audio/q_forklift.mp3",
+          "wordAudio": "audio/word_forklift.mp3",
+          "station": "lift",
+          "category": "vehicle",
+          "difficulty": "core"
+        }
+      ]
+    },
+    {
+      "id": "cars",
+      "name": "Cars",
+      "icon": "🚗",
+      "stations": [
+        {
+          "id": "road",
+          "name": "Road",
+          "icon": "🛣️"
+        },
+        {
+          "id": "rail",
+          "name": "Rail",
+          "icon": "🛤️"
+        },
+        {
+          "id": "sky",
+          "name": "Sky",
+          "icon": "☁️"
+        },
+        {
+          "id": "water",
+          "name": "Water",
+          "icon": "🌊"
+        }
+      ],
+      "items": [
+        {
+          "id": "car",
+          "word": "car",
+          "cn": "小汽车",
+          "parentNote": "最基础的车",
+          "image": "assets/images/car.jpg",
+          "questionText": "Where is the car?",
+          "questionAudio": "audio/q_car.mp3",
+          "wordAudio": "audio/word_car.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "bus",
+          "word": "bus",
+          "cn": "公交车",
+          "parentNote": "也可说 school bus",
+          "image": "assets/images/bus.jpg",
+          "questionText": "Find the bus.",
+          "questionAudio": "audio/q_bus.mp3",
+          "wordAudio": "audio/word_bus.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "truck",
+          "word": "truck",
+          "cn": "货车",
+          "parentNote": "普通货车；翻斗车是 dump truck，在 Construction 主题",
+          "image": "assets/images/truck.jpg",
+          "questionText": "Where is the truck?",
+          "questionAudio": "audio/q_truck.mp3",
+          "wordAudio": "audio/word_truck.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "train",
+          "word": "train",
+          "cn": "火车",
+          "parentNote": "可配合玩具火车",
+          "image": "assets/images/train.jpg",
+          "questionText": "Find the train.",
+          "questionAudio": "audio/q_train.mp3",
+          "wordAudio": "audio/word_train.mp3",
+          "station": "rail",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "bike",
+          "word": "bike",
+          "cn": "自行车",
+          "parentNote": "也可说 bicycle",
+          "image": "assets/images/bike.jpg",
+          "questionText": "Where is the bike?",
+          "questionAudio": "audio/q_bike.mp3",
+          "wordAudio": "audio/word_bike.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "taxi",
+          "word": "taxi",
+          "cn": "出租车",
+          "parentNote": "黄色出租车图片更直观",
+          "image": "assets/images/taxi.jpg",
+          "questionText": "Find the taxi.",
+          "questionAudio": "audio/q_taxi.mp3",
+          "wordAudio": "audio/word_taxi.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "ambulance",
+          "word": "ambulance",
+          "cn": "救护车",
+          "parentNote": "可模仿 wee-oo wee-oo 音效",
+          "image": "assets/images/ambulance.jpg",
+          "questionText": "Where is the ambulance?",
+          "questionAudio": "audio/q_ambulance.mp3",
+          "wordAudio": "audio/word_ambulance.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "fire_truck",
+          "word": "fire truck",
+          "cn": "消防车",
+          "parentNote": "也可说 fire engine",
+          "image": "assets/images/fire_truck.jpg",
+          "questionText": "Find the fire truck.",
+          "questionAudio": "audio/q_fire_truck.mp3",
+          "wordAudio": "audio/word_fire_truck.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "police_car",
+          "word": "police car",
+          "cn": "警车",
+          "parentNote": "可模仿 wee-oo 音效",
+          "image": "assets/images/police_car.jpg",
+          "questionText": "Where is the police car?",
+          "questionAudio": "audio/q_police_car.mp3",
+          "wordAudio": "audio/word_police_car.mp3",
+          "station": "road",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "airplane",
+          "word": "airplane",
+          "cn": "飞机",
+          "parentNote": "也可说 plane",
+          "image": "assets/images/airplane.jpg",
+          "questionText": "Find the airplane.",
+          "questionAudio": "audio/q_airplane.mp3",
+          "wordAudio": "audio/word_airplane.mp3",
+          "station": "sky",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "boat",
+          "word": "boat",
+          "cn": "船",
+          "parentNote": "小船；大轮船是 ship",
+          "image": "assets/images/boat.jpg",
+          "questionText": "Where is the boat?",
+          "questionAudio": "audio/q_boat.mp3",
+          "wordAudio": "audio/word_boat.mp3",
+          "station": "water",
+          "category": "vehicle",
+          "difficulty": "core"
+        },
+        {
+          "id": "helicopter",
+          "word": "helicopter",
+          "cn": "直升机",
+          "parentNote": "可配合螺旋桨音效",
+          "image": "assets/images/helicopter.jpg",
+          "questionText": "Find the helicopter.",
+          "questionAudio": "audio/q_helicopter.mp3",
+          "wordAudio": "audio/word_helicopter.mp3",
+          "station": "sky",
+          "category": "vehicle",
+          "difficulty": "core"
+        }
+      ]
+    },
+    {
+      "id": "dinosaurs",
+      "name": "Dinosaurs",
+      "icon": "🦖",
+      "stations": [],
+      "items": [
+        {
+          "id": "t_rex",
+          "word": "T-Rex",
+          "cn": "霸王龙",
+          "parentNote": "可模仿 roar",
+          "image": "assets/images/t_rex.jpg",
+          "questionText": "Where is the T-Rex?",
+          "questionAudio": "audio/q_t_rex.mp3",
+          "wordAudio": "audio/word_t_rex.mp3",
+          "station": "",
+          "category": "dinosaur",
+          "difficulty": "core"
+        },
+        {
+          "id": "triceratops",
+          "word": "triceratops",
+          "cn": "三角龙",
+          "parentNote": "头上有三只角",
+          "image": "assets/images/triceratops.jpg",
+          "questionText": "Find the triceratops.",
+          "questionAudio": "audio/q_triceratops.mp3",
+          "wordAudio": "audio/word_triceratops.mp3",
+          "station": "",
+          "category": "dinosaur",
+          "difficulty": "core"
+        },
+        {
+          "id": "stegosaurus",
+          "word": "stegosaurus",
+          "cn": "剑龙",
+          "parentNote": "背上有骨板",
+          "image": "assets/images/stegosaurus.jpg",
+          "questionText": "Where is the stegosaurus?",
+          "questionAudio": "audio/q_stegosaurus.mp3",
+          "wordAudio": "audio/word_stegosaurus.mp3",
+          "station": "",
+          "category": "dinosaur",
+          "difficulty": "core"
+        },
+        {
+          "id": "dinosaur_egg",
+          "word": "dinosaur egg",
+          "cn": "恐龙蛋",
+          "parentNote": "可配合敲蛋动作",
+          "image": "assets/images/dinosaur_egg.jpg",
+          "questionText": "Find the dinosaur egg.",
+          "questionAudio": "audio/q_dinosaur_egg.mp3",
+          "wordAudio": "audio/word_dinosaur_egg.mp3",
+          "station": "",
+          "category": "dinosaur",
+          "difficulty": "core"
+        },
+        {
+          "id": "volcano",
+          "word": "volcano",
+          "cn": "火山",
+          "parentNote": "可模仿轰隆声",
+          "image": "assets/images/volcano.jpg",
+          "questionText": "Where is the volcano?",
+          "questionAudio": "audio/q_volcano.mp3",
+          "wordAudio": "audio/word_volcano.mp3",
+          "station": "",
+          "category": "dinosaur",
+          "difficulty": "core"
+        },
+        {
+          "id": "fossil",
+          "word": "fossil",
+          "cn": "化石",
+          "parentNote": "恐龙骨头化石",
+          "image": "assets/images/fossil.jpg",
+          "questionText": "Find the fossil.",
+          "questionAudio": "audio/q_fossil.mp3",
+          "wordAudio": "audio/word_fossil.mp3",
+          "station": "",
+          "category": "dinosaur",
+          "difficulty": "core"
+        }
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "Animals",
+      "icon": "🐶",
+      "stations": [],
+      "items": [
+        {
+          "id": "dog",
+          "word": "dog",
+          "cn": "狗",
+          "parentNote": "可模仿 woof",
+          "image": "assets/images/dog.jpg",
+          "questionText": "Where is the dog?",
+          "questionAudio": "audio/q_dog.mp3",
+          "wordAudio": "audio/word_dog.mp3",
+          "station": "",
+          "category": "animal",
+          "difficulty": "core"
+        },
+        {
+          "id": "cat",
+          "word": "cat",
+          "cn": "猫",
+          "parentNote": "可模仿 meow",
+          "image": "assets/images/cat.jpg",
+          "questionText": "Find the cat.",
+          "questionAudio": "audio/q_cat.mp3",
+          "wordAudio": "audio/word_cat.mp3",
+          "station": "",
+          "category": "animal",
+          "difficulty": "core"
+        },
+        {
+          "id": "duck",
+          "word": "duck",
+          "cn": "鸭子",
+          "parentNote": "可模仿 quack",
+          "image": "assets/images/duck.jpg",
+          "questionText": "Where is the duck?",
+          "questionAudio": "audio/q_duck.mp3",
+          "wordAudio": "audio/word_duck.mp3",
+          "station": "",
+          "category": "animal",
+          "difficulty": "core"
+        },
+        {
+          "id": "bear",
+          "word": "bear",
+          "cn": "熊",
+          "parentNote": "可模仿 growl",
+          "image": "assets/images/bear.jpg",
+          "questionText": "Find the bear.",
+          "questionAudio": "audio/q_bear.mp3",
+          "wordAudio": "audio/word_bear.mp3",
+          "station": "",
+          "category": "animal",
+          "difficulty": "core"
+        },
+        {
+          "id": "rabbit",
+          "word": "rabbit",
+          "cn": "兔子",
+          "parentNote": "长耳朵",
+          "image": "assets/images/rabbit.jpg",
+          "questionText": "Where is the rabbit?",
+          "questionAudio": "audio/q_rabbit.mp3",
+          "wordAudio": "audio/word_rabbit.mp3",
+          "station": "",
+          "category": "animal",
+          "difficulty": "core"
+        },
+        {
+          "id": "monkey",
+          "word": "monkey",
+          "cn": "猴子",
+          "parentNote": "可模仿 ooh-ooh-ah-ah",
+          "image": "assets/images/monkey.jpg",
+          "questionText": "Find the monkey.",
+          "questionAudio": "audio/q_monkey.mp3",
+          "wordAudio": "audio/word_monkey.mp3",
+          "station": "",
+          "category": "animal",
+          "difficulty": "core"
+        }
+      ]
+    }
+  ],
+  "praise": {
+    "great": "audio/praise_great.mp3",
+    "awesome": "audio/praise_awesome.mp3"
+  },
+  "tryAgain": "audio/try_again.mp3",
+  "restPrompt": "audio/rest_prompt.mp3",
+  "celebration": "audio/celebration.mp3"
+}

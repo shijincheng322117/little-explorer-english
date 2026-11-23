@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 小探险家英语：3岁宝宝英语启蒙纯静态PWA，iPhone竖屏全屏离线运行 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 禁止缩放 + 刘海屏全屏适配 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="小探险家英语">
+  <meta name="theme-color" content="#4FC3F7">
+  <title>Little Explorer English</title>
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 顶部栏：返回首页 + 星星计数器（无文字依赖） -->
+  <header id="topbar">
+    <button id="homeBtn" class="home-btn" aria-label="Home">🏠</button>
+    <div id="starBar" class="star-bar" aria-label="Stars">⭐ <span id="starCount">0</span></div>
+  </header>
+
+  <!-- 主舞台：所有页面都在这里切换（淡入淡出） -->
+  <main id="stage"></main>
+
+  <!-- 休息遮罩：8分钟后弹出，只能回首页，由家长控制 -->
+  <div id="restOverlay" class="overlay hidden">
+    <div class="rest-card">
+      <div class="rest-icon">😴</div>
+      <button id="restHomeBtn" class="big-btn">🏠</button>
+    </div>
+  </div>
+
+  <!-- 音频解锁提示：iOS首次需要一次点击才能播放声音 -->
+  <div id="audioUnlock" class="overlay hidden">
+    <button id="unlockBtn" class="big-btn">▶ Start</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
